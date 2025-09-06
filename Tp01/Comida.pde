@@ -1,21 +1,21 @@
 class Comida extends Posicion {
-  float r;
-  color c;
+  private float radCom;
+  private color c;
   
-  Comida(float r_) {
-    super(random(r_, width-r_), random(r_, height-r_));
-    r = r_;
+  public Comida(float r) {
+    super(random(r, width-r), random(r, height-r));
+    radCom = r;
     nuevaPosicion();
   }
   
-  void mostrar() {
+  public void mostrar() {
     fill(c);
-    ellipse(x, y, r*2, r*2);
+    ellipse(x, y, radCom*2, radCom*2);
   }
   
-  void nuevaPosicion() {
-    x = random(r, width-r);
-    y = random(r, height-r);
+  public void nuevaPosicion() {
+    x = random(radCom, width-radCom);
+    y = random(radCom, height-radCom);
     c = color(random(255), random(255), random(255));
   }
 }
